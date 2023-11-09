@@ -1,0 +1,74 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <h1>{{name}}</h1>
+    <h2><code>{{description}}</code></h2>
+
+    <br>
+    <div>
+        {{>title data="Історія"}}
+        {{#with history}}
+        <strong>{{year}}
+            <br>
+            {{founder}}</strong>
+        {{/with}}
+    </div>
+
+    <br>
+    {{>title data="Типи"}}
+    <button type="button" class="btn btn-warning"><code>{{types}}</code></button>
+
+    <br>
+    <br>
+    {{>title data="Синтаксис"}}
+    {{#with syntax}}
+    <button type="button" class="btn btn-primary">{{variables}}</button>
+    <br>
+    <button type="button" class="btn btn-dark">{{functions}}</button>
+    <br>
+    <button type="button" class="btn btn-success">{{conditionals}}</button>
+    <br>
+    <button type="button" class="btn btn-danger">{{loops}}</button>
+    <br>
+    <button type="button" class="btn btn-info">{{classes}}</button>
+    {{/with}}
+
+    <br>
+    <br>
+
+    {{>title data="Особливості"}}
+    <input class="btn btn-primary" type="button" value="{{features}}">
+
+    <br>
+    <br>
+
+    {{>title data="Бібліотеки"}}
+    <button type="button" class="btn btn-outline-dark">{{libraries}}</button>
+
+    <br>
+    <br>
+
+    {{>title data="Інструменти"}}
+    <button type="button" class="btn btn-outline-success">{{tools}}</button>
+
+    <br>
+    <br>
+
+    {{>title data="Комьюніті"}}
+
+    {{#each community}}
+    {{name}}
+    <br>
+    {{type}}
+    {{/each}}
+
+</div>
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

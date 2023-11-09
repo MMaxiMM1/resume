@@ -35,7 +35,6 @@
     "webpack-cli": "^4.9.2"
   },
   "devDependencies": {
-
   },
   "engines": {
     "node": "16.16.0",
