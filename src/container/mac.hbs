@@ -1,0 +1,154 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    {{>title data="Apple MacBook Pro"}}
+    <h1>Опис</h1>
+    <button type="button" class="btn btn-info">{{description}}</button>
+    <br>
+    <button type="button" class="btn btn-success">Ціна - {{price}}</button>
+
+    <br>
+    <br>
+
+    <h2>Категорія - {{category}}</h2>
+    <br>
+    <h3>Процесор</h3>
+
+    {{#with features}}
+    {{#with processor}}
+    <button type="button" class="btn btn-outline-primary">Бренд - {{brand}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-secondary">Модель - {{model}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-success">Швидкість - {{speed}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-danger">Ядер - {{cores}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-warning">Кеш - {{cache}}</button>
+
+    <br>
+    <br>
+    {{/with}}
+
+    <h3>Пам'ять</h3>
+
+    {{#with memory}}
+    <button type="button" class="btn btn-outline-info">Тип - {{type}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-dark">Розмір - {{size}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-success">Швидкість - {{speed}}</button>
+
+    <br>
+    <br>
+    {{/with}}
+
+    <h3>Зберігання</h3>
+    {{#with storage}}
+    <button type="button" class="btn btn-dark">Тип - {{type}}</button>
+    <br>
+    <button type="button" class="btn btn-dark">Розмір - {{size}}</button>
+
+    <br>
+    <br>
+    {{/with}}
+
+    <h3>Дисплей</h3>
+
+    {{#with display}}
+    <button type="button" class="btn btn-outline-dark">Розмір - {{size}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-warning">Роздільна здатність - {{resolution}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-success">Технологія - {{technology}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-primary">Колір простору - {{color_space}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-info">Яскравість - {{brightness}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-dark">Швидкість оновлення - {{refresh_rate}}</button>
+
+    <br>
+    <br>
+    {{/with}}
+
+    <h3>Графіка</h3>
+
+    {{#with graphics}}
+    <button type="button" class="btn btn-primary" disabled>Бренд - {{brand}}</button>
+    <br>
+    <button type="button" class="btn btn-secondary" disabled>Модель - {{model}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-primary" disabled>Пам'ять - {{memory}}</button>
+
+    <br>
+    <br>
+
+    {{/with}}
+
+    <h3>Порти</h3>
+
+    {{#each ports}}
+    <br>
+    <strong>Типи - {{type}}</strong>
+    <strong> - {{count}}</strong>
+    <br>
+    <strong>{{features}}</strong>
+
+    {{/each}}
+
+    <br>
+    <h3>Батарея</h3>
+
+    {{#with battery}}
+    <button type="button" class="btn active" data-bs-toggle="button" aria-pressed="true">Тип - {{type}}</button>
+    <br>
+    <button type="button" class="btn" disabled data-bs-toggle="button">Потужність - {{capacity}}</button>
+    <br>
+    <button type="button" class="btn btn-primary" data-bs-toggle="button">Тримає заряд - {{life}}</button>
+    <br>
+    {{/with}}
+    <strong>{{weight}}</strong>
+    <br>
+    <br>
+
+    <h3>Розміри</h3>
+    {{#with dimensions}}
+    <button type="button" class="btn btn-primary btn-sm">Висота - {{height}}</button>
+    <br>
+    <button type="button" class="btn btn-secondary btn-sm">Ширина - {{width}}</button>
+    <br>
+    <button type="button" class="btn btn-primary btn-sm">Глибина - {{depth}}</button>
+
+    <br>
+    <br>
+
+    {{/with}}
+    <strong>Операційна Система - {{operating_system}}</strong>
+    <br>
+
+    {{#each accessories}}
+    <strong>Назва - {{name}}</strong>
+    <br>
+    <strong>Ціна - {{price}}</strong>
+    <br>
+    {{/each}}
+
+
+
+
+
+    {{/with}}
+
+
+
+</div>
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}

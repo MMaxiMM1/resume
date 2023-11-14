@@ -1,0 +1,166 @@
+{{!--
+Це код container файлу для summary сторінки,
+в якому міститься код, котрий буде віддаватися по шляху (PATH) - "/summary"
+--}}
+
+<div>
+    <h1>{{make}}</h1>
+    <h2><strong>Модель - </strong>{{model}}</h2>
+    <h2><strong>Колір - </strong>{{color}}</h2>
+    <h2><strong>Рік - </strong>{{year}}</h2>
+    <br>
+    {{>title data="Особливості"}}
+
+    {{#with features}}
+    {{#with interior}}
+    {{#with seats}}
+    <button type="button" class="btn btn-primary">{{material}}</button>
+    <br>
+    <button type="button" class="btn btn-dark">{{color}}</button>
+    <br>
+    {{#if heated}} <button type="button" class="btn btn-secondary">Підігрів - Так</button>{{/if}}
+    <br>
+    {{#if ventilated}} <button type="button" class="btn btn-success">Вентильований - Так</button> {{/if}}
+    {{/with}}
+
+    <br>
+    <br>
+    {{>title data="Панель"}}
+    {{#with dashboard}}
+    <button type="button" class="btn btn-outline-primary">{{material}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-dark">{{color}}</button>
+    <br>
+    {{#with display}}
+    <button type="button" class="btn btn-primary btn-lg">{{type}}</button>
+    <br>
+    <button type="button" class="btn btn-secondary btn-lg">{{size}}</button>
+    <br>
+    <button type="button" class="btn btn-primary btn-sm">{{resolution}}</button>
+    <br>
+    {{#if touchscreen}} <button type="button" class="btn btn-secondary btn-sm"> Тачскрін - Є</button>
+    {{/if}}
+    {{/with}}
+
+    {{/with}}
+    <br>
+    <br>
+
+    {{>title data="Аудіо"}}
+    {{#with audio}}
+    <button type="button" class="btn btn-outline-primary">Система - {{system}}</button>
+    <br>
+    <button type="button" class="btn btn-outline-success">Колонки{{speakers}}</button>
+    <br>
+    {{#if subwoofer}}<button type="button" class="btn btn-outline-warning">Самбуфери - Є</button> {{/if}}
+    <br>
+    {{#if bluetooth}} <button type="button" class="btn btn-outline-dark">Блютуз - Є</button> {{/if}}
+    <br>
+    {{#if USB}} <button type="button" class="btn btn-outline-primary">USB - Є</button> {{/if}}
+    {{/with}}
+
+    <br>
+    <br>
+    {{/with}}
+
+    {{>title data="Вигляд"}}
+
+    {{#with exterior}}
+    {{#with wheels}}
+    <h4>Колеса</h4>
+    <strong>Колеса - {{size}}</strong>
+    <br>
+    <strong>Тип - {{type}}</strong>
+    <br>
+    <strong>Колір - {{color}}</strong>
+    {{/with}}
+
+    <br>
+    <br>
+    <h4>Фари</h4>
+    {{#with headlights}}
+    <strong>Тип - {{type}}</strong>
+    <br>
+    <strong>Яскравість - {{brightness}}</strong>
+    <br>
+    {{#if automatic}} <strong>Автоматично - Так</strong> {{/if}}
+    {{/with}}
+
+    <br>
+    <br>
+    <h4>Люк</h4>
+    {{#with sunroof}}
+    <strong>Тип - {{type}}</strong>
+    <br>
+    <strong>Розмір - {{size}}</strong>
+    <br>
+    {{#if automatic}} <strong>Автоматично - Так</strong> {{/if}}
+    {{/with}}
+
+    <br>
+    <br>
+    {{/with}}
+
+    {{#with safety}}
+    {{>title data="Допомога"}}
+    {{#with assistance}}
+
+    {{#if blind_spot_monitoring}} <em>Моніторінг сліпих зон - Є</em> {{/if}}
+    </br>
+    {{#if rear_cross_traffic_alert}} <em>Задній перехресний трафік попередження - Є</em> {{/if}}
+    <br>
+    {{#if lane_departure_warning}} <em>Попередження - Є</em> {{/if}}
+    <br>
+    {{#if adaptive_cruise_control}} <em>Адаптивне керування круїзом - Є</em>{{/if}}
+    <br>
+    {{#if collision_warning}} <em>Попередження про зіткнення - Є</em>{{/if}}
+
+    {{/with}}
+
+
+    <br>
+    <br>
+
+    {{/with}}
+
+    {{/with}}
+
+    {{>title data="Двигун"}}
+
+    {{#with engine}}
+    <button type="button" class="btn btn-dark">{{type}}</button>
+    <br>
+    <button type="button" class="btn btn-primary">{{displacement}}</button>
+    <br>
+    <button type="button" class="btn btn-secondary">{{horsepower}}</button>
+    <br>
+    <button type="button" class="btn btn-success">{{torque}}</button>
+    {{/with}}
+
+    <br>
+    <br>
+    {{>title data="Ціна"}}
+
+    {{#with price}}
+    <strong>Основа -{{base}}</strong>
+    <br>
+    <strong>Місце призначення - {{destination}}</strong>
+    <br>
+    {{#with options}}
+    <strong>Навігація - {{navigation}}</strong>
+    <br>
+    <strong>Дах - {{moonroof}}</strong>
+    <br>
+    <strong>Фарба - {{premium_paint}}</strong>
+    {{/with}}
+    <br>
+    <strong>Остаточна ціна - {{total}}</strong>
+    {{/with}}
+
+</div>
+
+
+{{!--
+Цей код містить лише те, що буде виводитись в {{{body}}} в layout/default.hbs
+Адже наш layout/default.hbs має вже структуру HTML
+--}}
